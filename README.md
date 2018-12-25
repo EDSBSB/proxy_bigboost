@@ -3,9 +3,9 @@ Prova de conceito
 
 
 ## Rodar a aplicação:
-mvn spring-boot:run
+### mvn spring-boot:run
 ou
-mvn package && java -jar target/proxy_gibboost-0.0.1-SNAPSHOT.jar
+### mvn package && java -jar target/proxy_gibboost-0.0.1-SNAPSHOT.jar
 
 Esse roda na porta 8090 e é responsável por buscar as informações das pessoas no BigBoost.
 
