@@ -4,8 +4,13 @@ Prova de conceito
 
 ## Rodar a aplicação:
 mvn spring-boot:run
+ou
+mvn package && java -jar target/proxy_gibboost-0.0.1-SNAPSHOT.jar
 
-Esse roda na porta 8090 e é responsável por buscar as informações das pessoas no BigBoost
+Esse roda na porta 8090 e é responsável por buscar as informações das pessoas no BigBoost.
+
+Todas as informações do bigboost é gravada na tabela <b>conteiner</b> com a coluna tipo = 'bigBoost'
+Query: select * from conteiner where tipo = 'bigBoost';
 
 Exemplo de chamada no bigboost:
 
