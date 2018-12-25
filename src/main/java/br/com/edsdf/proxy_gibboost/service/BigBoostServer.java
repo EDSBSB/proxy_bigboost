@@ -18,7 +18,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GibBoostServer {
+public class BigBoostServer {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
@@ -85,8 +85,12 @@ public class GibBoostServer {
 	}
 
 	private String buscaFiltro(String filtro) {
-		String sql = "select dado from conteiner where tipo = 'bigBoost' and dado ->> 'request' = ?";
-		List<?>lst = jdbcTemplate.queryForList(sql, new Object[] {filtro}, String.class);
+		String arr[] = filtro.split("q\":");
+		if( arr.length > 1) {
+			filtro = arr[1];
+		}
+		String sql = "select dado from conteiner where tipo = 'bigBoost' and dado ->> 'request' like  ?";
+		List<?>lst = jdbcTemplate.queryForList(sql, new Object[] {"%"+filtro+"%"}, String.class);
 		System.out.println( lst );
 		if( lst != null && lst.size() > 0 ) {
 			String s = lst.get(0).toString();

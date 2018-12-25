@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.edsdf.proxy_gibboost.service.GibBoostServer;
+import br.com.edsdf.proxy_gibboost.service.BigBoostServer;
 
 @RestController
 public class ProxyController {
 
 		
 	@Autowired
-	GibBoostServer service;
+	BigBoostServer service;
 
 	
 	@GetMapping("/greeting")
